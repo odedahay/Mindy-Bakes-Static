@@ -17,12 +17,12 @@
 
     <title>Minda Bakery | Home</title>
 </head>
-<body id="homepage">
+<body id="product_page">
     <p class="list text-center"></p>
     <!-- Header-->
     <header class="site-header">
         <div class="main-nav">
-            <div class="wrapper">
+            <div class="wrapper-nav">
                 <div class="site-header__menu-icon">
                     <!-- <div class="site-header__menu-icon__middle"></div> -->
                     <i class="fas fa-bars fa-2x showMenu"></i>
@@ -37,7 +37,12 @@
                         <ul>
                           <li><a href="index.html">Home</a></li>
                           <li><a href="about.html">About</a></li>
-                          <li><a href="products.html" class="active">My Products</a></li>
+                          <li><a href="#" class="display-navs active">My Products +</a>
+                            <ul class="dropdown">
+                                <li><a href="products.html">Category 1</a></li>
+                                <li><a href="products.html">Category 2</a></li>
+                            </ul>
+                          </li>
                           <li><a href="contact.html" >Contact Me</a></li>
                         </ul>
                     </nav>
@@ -62,7 +67,7 @@
 
     <!-- Body -->
     <div class="body-content" id="produt-section">
-        <h2 class="section-title">My Products</h2>
+        <h2 class="section-title">Category: Product 1</h2>
         <div class="wrapper">
             <div class="product-section">
                 <div class="product-items">
@@ -111,6 +116,16 @@
                         </p>
                     </div>
                 </div>
+                <div class="product-items">
+                    <div class="product-items">
+                        <div class="product-items-image" style="background-image: url('images/main-bread.jpg');"></div>
+                        <h2 class="product-items__name">Product Bread</h2>
+                        <p class="product-items__desc">PRICE:  $13 per dozen</p>
+                        <p class="py-2">
+                            <a href="product-details.html" class="btn primary-btn">View Details</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -139,11 +154,10 @@
             <div class="main-footer_wrapper">
                 <div class="main-footer__items">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Products</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="main-footer__items">

@@ -5,7 +5,7 @@ const app = {
     },
     load: () => {
         //the page had finished loading its HTML
-        //app.showLoading();
+        // app.showLoading();
         app.getData();
 
     },
@@ -22,21 +22,36 @@ const app = {
                 app.getIndex();
 
                 break;
-
-            case 'about':
-                app.getAboutUs();
+            case 'faq_page':
+                app.getFAQ();
 
                 break;
 
             default:
-                app.somethingElse();
+                app.somethingElse
         }
 
+        // Menu page
         const menuBtn = document.querySelector('.showMenu');
         const closeBtn = document.querySelector('.closeMenu');
-        
+        const displaydropdown = document.querySelector('.display-navs');
+        const dropdown_diplay = document.querySelector('.dropdown');
+       
         menuBtn.addEventListener('click', app.displayMenu);
         closeBtn.addEventListener('click', app.hideMenu)
+
+        if(window.screen.availWidth < 798){
+            dropdown_diplay.classList.toggle('hide-dropdown')
+            displaydropdown.addEventListener('click', function(){
+
+                if (dropdown_diplay.classList.contains('hide-dropdown')) {
+                    dropdown_diplay.classList.remove('hide-dropdown');
+                } else {
+               
+                    dropdown_diplay.classList.add('hide-dropdown')
+                }
+            });
+        }
         
     },
     getIndex: () => {
@@ -45,8 +60,24 @@ const app = {
         // Hamburger menu //
        
     },
-    getAboutUs: () =>{
-        console.log('About Us page');
+    getFAQ: () =>{
+        const accordions = document.getElementsByClassName('accordion')
+        for (let i = 0; i < accordions.length; i++){
+            accordions[i].onclick = function(){
+                this.classList.toggle('is-open');
+
+                var content = this.nextElementSibling;
+                if(content.style.maxHeight){
+                    //accordion currently open, so close it
+                    content.style.maxHeight = null
+                }else{
+                    //accordion is currently close, so open it
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+
+            }
+        }
+
     },
     somethingElse: () => {
         // Hamburger menu //

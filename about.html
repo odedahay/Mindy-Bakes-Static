@@ -17,17 +17,17 @@
 
     <title>Minda Bakery | Home</title>
 </head>
-<body id="homepage">
+<body id="about_page">
     <p class="list text-center"></p>
     <!-- Header-->
     <header class="site-header">
         <div class="main-nav">
-            <div class="wrapper">
+            <div class="wrapper-nav">
                 <div class="site-header__menu-icon">
-                    <a href="#"><img src="/images/mindy-logo.svg" alt="Mindy Bakery" ></a>
+                    <i class="fas fa-bars fa-2x showMenu"></i>
                 </div>
                 <div class="site-header__logo">
-                    <img src="/images/mindy-logo.svg" alt="Mindy Bakery" >
+                    <a href="#"><img src="/images/mindy-logo.svg" alt="Mindy Bakery" ></a>
                 </div>
                 <div class="site-header__menu-content" >
                    
@@ -36,7 +36,12 @@
                         <ul>
                           <li><a href="index.html">Home</a></li>
                           <li><a href="about.html" class="active">About</a></li>
-                          <li><a href="product-details.html">My Products</a></li>
+                          <li><a href="#" class="display-navs">My Products +</a>
+                            <ul class="dropdown">
+                                <li><a href="products.html">Category 1</a></li>
+                                <li><a href="products.html">Category 2</a></li>
+                            </ul>
+                          </li>
                           <li><a href="contact.html" >Order Now</a></li>
                         </ul>
                     </nav>
@@ -70,10 +75,10 @@
         </div>
     </div>
 
-    <!-- Special Order -->
-    <div class="special-order">
+      <!-- Special Order -->
+      <div class="special-order">
         <div class="wrapper">
-            <div class="grid one-third-column background-grey">
+            <div class="grid one-third-column background-yellowish">
                 <div class="special-order__text">
                     <h2>Do you need special order your Party?<br>
                         Curious to know more our service?</h2>
@@ -94,11 +99,10 @@
             <div class="main-footer_wrapper">
                 <div class="main-footer__items">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Products</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="main-footer__items">

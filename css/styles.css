@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300,400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap");
+
 
 :root{
     
@@ -20,6 +21,7 @@ body{
 }
 
 /********* Start Main Menu *********/
+
 .site-header{
     width: 100%;
     position: relative;
@@ -111,12 +113,16 @@ body{
 }
 
 .primary-nav ul{
-    padding: 0 20px
+    padding: 0 20px;
+    position:relative;
 }
+
 .primary-nav ul li{
     list-style: none;
     font-family: 'Crete Round', serif;
 }
+
+
 
 .primary-nav ul li a{
     color: #fff; 
@@ -130,13 +136,24 @@ body{
 @media (min-width: 800px) {
     .primary-nav ul{
         margin: 0; padding: 0 40px; list-style: none; text-align: right;
-       
     }
+    .primary-nav ul ul{
+        padding: 0 20px;
+        position: absolute;
+        top: 30px;
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+        background-color: var(--primary-color);
+        border-radius: 0 0  25px 25px;
+    }
+
     .primary-nav ul li{
         float:  none;
         display: inline-block;
     }
     .primary-nav ul li:nth-child(1){float: left;}
+    .primary-nav ul ul li:nth-child(1){float: none;}
     .primary-nav ul li:nth-child(2){float: left;}
     .primary-nav ul li a{
         color: #fff; 
@@ -148,6 +165,30 @@ body{
     }
     .primary-nav ul li a:hover{background-color: #B1133E; color: #fff;}
     .primary-nav ul li a.active{background-color: #B1133E; color: #fff;}
+
+    .primary-nav ul li:hover > ul{
+        top: 58px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .primary-nav  ul ul li{
+        position: relative;
+        margin: 0px;
+        display: list-item;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    .primary-nav  ul ul li a{
+        color: #fff; 
+        text-decoration: none; 
+        display: block; 
+        padding: 18px 26px;
+        transition: all .3s ease-in-out;
+    }
+}
+@media (max-width: 798px) {
+    .hide-dropdown {display: none;}
 }
 /********* End Main Menu *********/
 /********* Start Large Hero *********/
@@ -599,5 +640,51 @@ body{
 
 }
 
+/********* Start Contact Styles *********/
+/********* Start FAQ Styles *********/
+  .accordion {
+    position: relative;
+    /* width: 100%; */
+    background-color: #f9f0d9;
+    text-align: left;
+    padding: 6px 20px;
+    cursor: pointer;
+    margin-bottom: 2px;
+    transition: background-color 0.2s linear;
+  }
 
-  /********* Start Contact Styles *********/
+  .accordion h2{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-right: 40px;
+    line-height: 28px;
+  }
+  
+  .accordion:after {
+    content: '\f055';
+    font-family: "fontawesome";
+    font-size: 18px;
+    /* float: right; */
+    position: absolute;
+    top:30px;
+    right: 20px;
+  }
+  
+  .accordion.is-open:after {
+    content: '\f056';
+  }
+  
+  .accordion:hover, .accordion.is-open {
+    background-color: #FDD052;
+  }
+  
+  .accordion-content {
+    background-color: white;
+    border-left: 1px solid #f9f0d9;
+    border-right: 1px solid #f9f0d9;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+/********* end FAQ Styles *********/
