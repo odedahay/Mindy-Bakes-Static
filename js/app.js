@@ -5,15 +5,18 @@ const app = {
     },
     load: () => {
         //the page had finished loading its HTML
-        // app.showLoading();
+        app.showLoading();
         app.getData();
-
     },
-    // showLoading: () => {
-    //     let p = document.querySelector('.list');    
-    //     p.textContent = 'Loading content...';
-    //     p.className = 'loading-list';
-    // },
+    showLoading: () => {
+        let loading_section = document.querySelector('.list');    
+        
+        window.addEventListener('load', ()=>{
+            loading_section.textContent = 'Loading content...';
+            loading_section.className = 'loading-list';
+            loading_section.parentElement.removeChild(loading_section);
+        })
+    },
     getData: () =>{
         // based on the current page ...
         let page = document.body.id;
